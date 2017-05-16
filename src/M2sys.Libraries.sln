@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2sys.ClassifierPdf", "M2sys.ClassifierPdf\M2sys.ClassifierPdf.csproj", "{2B19970B-C19E-491C-9086-07FD2C017015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2sys.IntegrationTests", "M2sys.IntegrationTests\M2sys.IntegrationTests.csproj", "{EB20B38C-0537-4781-B10C-3F26903E11B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B19970B-C19E-491C-9086-07FD2C017015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B19970B-C19E-491C-9086-07FD2C017015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B19970B-C19E-491C-9086-07FD2C017015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B19970B-C19E-491C-9086-07FD2C017015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB20B38C-0537-4781-B10C-3F26903E11B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB20B38C-0537-4781-B10C-3F26903E11B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB20B38C-0537-4781-B10C-3F26903E11B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB20B38C-0537-4781-B10C-3F26903E11B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
