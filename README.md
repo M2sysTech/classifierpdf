@@ -11,5 +11,5 @@ If you are interested in fixing issues and contributing directly to the code bas
 
 ## License
 
-Licensed under the [AGPL](LICENSE.txt) License.
+Licensed under the [AGPL](LICENSE) License.
 
