@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+	<PropertyGroup>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<RestorePackages>true</RestorePackages>
+		<PlatformTarget>x86</PlatformTarget>
+		<Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  
+	<Import Project="stylecop\StyleCop.targets" />
+	<Import Project="nuget\NuGet.targets" />
+
+    <Target Name="AfterBuild">
+	
+		<!-- TODO: projeto web -->
+		<Copy 
+			SourceFiles="$([System.IO.Path]::GetFullPath('..\..\config\test_settings.config'))" 			
+			DestinationFiles="$(TargetDir)\settings.config"
+			Condition="$(MSBuildProjectName.EndsWith('Tests')) AND Exists($([System.IO.Path]::GetFullPath('..\..\config\test_settings.config')))"
+			ContinueOnError="true" />
+		
+		<!--web-->		
+		<Copy 
+			SourceFiles="$([System.IO.Path]::GetFullPath('..\..\config\development_settings.config'))" 			
+			DestinationFiles="$(TargetDir)\settings.config"
+			Condition="$(MSBuildProjectName.EndsWith('Tests'))==false AND $(MSBuildProjectName.EndsWith('Web'))==false AND Exists($([System.IO.Path]::GetFullPath('..\..\config\development_settings.config')))"
+			ContinueOnError="true" />
+
+        <Copy
+            SourceFiles="$([System.IO.Path]::GetFullPath('..\..\config\development_settings.config'))"
+            DestinationFiles="$(ProjectDir)\settings.config"
+            Condition="$(MSBuildProjectName.EndsWith('Tests'))==false AND $(MSBuildProjectName.EndsWith('Web')) AND Exists($([System.IO.Path]::GetFullPath('..\..\config\development_settings.config')))"
+            ContinueOnError="true" />
+        
+		<!--webpublic-->
+		<Copy 
+			SourceFiles="$([System.IO.Path]::GetFullPath('..\..\config\development_settings.config'))" 			
+			DestinationFiles="$(TargetDir)\settings.config"
+			Condition="$(MSBuildProjectName.EndsWith('Tests'))==false AND $(MSBuildProjectName.EndsWith('WebPublic'))==false AND Exists($([System.IO.Path]::GetFullPath('..\..\config\development_settings.config')))"
+			ContinueOnError="true" />
+
+        <Copy
+            SourceFiles="$([System.IO.Path]::GetFullPath('..\..\config\development_settings.config'))"
+            DestinationFiles="$(ProjectDir)\settings.config"
+            Condition="$(MSBuildProjectName.EndsWith('Tests'))==false AND $(MSBuildProjectName.EndsWith('WebPublic')) AND Exists($([System.IO.Path]::GetFullPath('..\..\config\development_settings.config')))"
+            ContinueOnError="true" />
+        
+	</Target>
+
+</Project>
