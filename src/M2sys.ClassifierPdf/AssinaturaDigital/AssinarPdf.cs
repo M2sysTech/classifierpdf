@@ -6,9 +6,9 @@
 
     public class AssinarPdf 
     {
-        private readonly IPdfSigner pdfSigner;
+        private readonly TimeStampSigner pdfSigner;
 
-        public AssinarPdf(IPdfSigner pdfSigner)
+        public AssinarPdf(TimeStampSigner pdfSigner)
         {
             this.pdfSigner = pdfSigner;
         }
@@ -35,7 +35,7 @@
 
             try
             {
-                this.pdfSigner.Sign(singInfo);
+                this.pdfSigner.Execute(singInfo);
                 return singInfo.TargetPdf;
             }
             catch (Exception exception)

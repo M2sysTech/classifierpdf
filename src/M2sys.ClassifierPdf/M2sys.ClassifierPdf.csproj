@@ -75,10 +75,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssinaturaDigital\AssinarPdf.cs" />
+    <Compile Include="AssinaturaDigital\CarimboBry.cs" />
+    <Compile Include="AssinaturaDigital\CarimboCertisign.cs" />
     <Compile Include="AssinaturaDigital\Certificado.cs" />
+    <Compile Include="AssinaturaDigital\CertificadoA3.cs" />
     <Compile Include="AssinaturaDigital\MetaData.cs" />
     <Compile Include="AssinaturaDigital\PdfSigner.cs" />
     <Compile Include="AssinaturaDigital\SingInfo.cs" />
+    <Compile Include="AssinaturaDigital\TimeStampSigner.cs" />
     <Compile Include="IPdfServico.cs" />
     <Compile Include="IPdfSigner.cs" />
     <Compile Include="LogHelpers\ApplicationLogger.cs" />
@@ -102,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="brycert.cer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

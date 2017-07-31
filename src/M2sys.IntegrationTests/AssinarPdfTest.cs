@@ -8,7 +8,7 @@
     {
         public void DeveAssinarUmPdf()
         {
-            var assinadoPdf = new AssinarPdf(new PdfSigner()).Execute("meu.pdf");
+            var assinadoPdf = new AssinarPdf(new TimeStampSigner(new CertificadoA3())).Execute("meu.pdf");
         }
     }
 }
